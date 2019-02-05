@@ -1,6 +1,7 @@
 # Open a new restaurant in the city of Helsinki, Finland
 
-[business-problem](## Business problem)
+## Business problem
+
 Opening a new restaurant is a challenging task. Not only do you need to serve quality food with suitable pricing you need to select the correct location for the restaurant. Location is important from multiple factors. For example, it might be beneficial to locate the restaurant in an area with other restaurants to make it more accessible for example tourist who are just wandering and searching for a place to eat. But you might not want to locate an italian restaurant right next to another italian restaurant.
 
 The purpose of this report is to identify potential restaurant concepts (i.e. italian, modern european, price category etc) and locations for a customer that is planning to open a new restaurant into Helsinki, capital of Finland. 
@@ -14,7 +15,7 @@ Based on the discussions with the customer the following criterias were identifi
 * It beneficial to have bars or night clubs close by
 
 
-[data](## Data)
+## Data
 
 For the data analysis the following data sources will be used:
 * For existing restaurants and other venues such as bars we will use the Foursquare georaphical data APIs. 
@@ -24,7 +25,7 @@ For the data analysis the following data sources will be used:
 Foursquare APIs
 
 From the Foursquare APIs we are mainly interested about the venues, venue location and venue details. The relevant REST queries are:
-```https://api.foursquare.com/v2/venues/search?client_id=xxx&client_secret=xxx&ll=60.1671972,24.9532649770553&v=20180604&query=Food&radius=500&limit=30´´´
+```https://api.foursquare.com/v2/venues/search?client_id=xxx&client_secret=xxx&ll=60.1671972,24.9532649770553&v=20180604&query=Food&radius=500&limit=30```
 for a list of venues close to a given location. The query will return a JSON file that contains the found venues:
 ```{'meta': {'code': 200, 'requestId': '5c594a5d1ed2193b45233fce'},
  'response': {'venues': [{'id': '5942993fc666664eab7febf4',
@@ -50,7 +51,7 @@ for a list of venues close to a given location. The query will return a JSON fil
     'referralId': 'v-1549355613',
     'hasPerk': False},
     ...
- }´´´
+ }```
 
 From the response JSON we will capture the following data:
 * Venue ID
@@ -58,7 +59,7 @@ From the response JSON we will capture the following data:
 * Detailed location of the venue
 
 After we have obtained the list of venues we can use the venue ID to obtain more details about the venue.
-```https://api.foursquare.com/v2/venues/5942993fc666664eab7febf4?client_id=xxx&client_secret=xxx&v=20180604´´´
+```https://api.foursquare.com/v2/venues/5942993fc666664eab7febf4?client_id=xxx&client_secret=xxx&v=20180604```
 The query returns a JSON with venue details:
 ```{'id': '5942993fc666664eab7febf4',
  'name': 'Areperia Colombian Street Food',
@@ -144,7 +145,7 @@ The query returns a JSON with venue details:
     'count': 0,
     'items': []}]},
 ...
-}}´´´
+}}```
 
   From the venue details response JSON we will use:
   * Category data
@@ -168,7 +169,7 @@ The API is based on GraphQL. Due to the requirement we are mainly interested abo
         }
       }
     }
-  }´´´
+  }```
 
 in which the lat and lon are the coordinates for our locations and radius is the search radius in meters. The query will return a JSON file containing the public transportation stops within the defined radius.
 
@@ -197,7 +198,7 @@ in which the lat and lon are the coordinates for our locations and radius is the
         ...
       ]
     }
-  }´´´
+  }```
 
 Since we are mainly interested about the availability of the public transportation we will focus on number of stops within the radius. It is also possible to obtain more detailed route information for a particular stop but that is out of scope for this analysis.
 
