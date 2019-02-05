@@ -2,7 +2,7 @@
 
 ## Business problem
 
-Opening a new restaurant is a challenging task. Not only do you need to serve quality food with suitable pricing you need to select the correct location for the restaurant. Location is important from multiple factors. For example, it might be beneficial to locate the restaurant in an area with other restaurants to make it more accessible for example tourist who are just wandering and searching for a place to eat. But you might not want to locate an italian restaurant right next to another italian restaurant.
+Opening a new restaurant is a challenging task. Not only do you need to serve quality food with suitable pricing you need to select the correct location for the restaurant. Restaurant concept defines the type of food the restaurant serves and what the price range is. Location is important from multiple factors. For example, it might be beneficial to locate the restaurant in an area with other restaurants to make it more accessible for example tourist who are just wandering and searching for a place to eat. But you might not want to locate an italian restaurant right next to another italian restaurant.
 
 The purpose of this report is to identify potential restaurant concepts (i.e. italian, modern european, price category etc) and locations for a customer that is planning to open a new restaurant into Helsinki, capital of Finland. 
 
