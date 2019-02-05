@@ -22,12 +22,13 @@ For the data analysis the following data sources will be used:
 * Public transportation data in the Helsinki area is available via the DigiTransit APIs.
 * In addition we will use GeoJson file to visualize the Helsinki neighborhoods.
 
-Foursquare APIs
+### Foursquare APIs
 
 From the Foursquare APIs we are mainly interested about the venues, venue location and venue details. The relevant REST queries are:
 ```https://api.foursquare.com/v2/venues/search?client_id=xxx&client_secret=xxx&ll=60.1671972,24.9532649770553&v=20180604&query=Food&radius=500&limit=30```
 for a list of venues close to a given location. The query will return a JSON file that contains the found venues:
-```{'meta': {'code': 200, 'requestId': '5c594a5d1ed2193b45233fce'},
+```
+{'meta': {'code': 200, 'requestId': '5c594a5d1ed2193b45233fce'},
  'response': {'venues': [{'id': '5942993fc666664eab7febf4',
     'name': 'Areperia Colombian Street Food',
     'location': {'lat': 60.167583,
@@ -51,7 +52,8 @@ for a list of venues close to a given location. The query will return a JSON fil
     'referralId': 'v-1549355613',
     'hasPerk': False},
     ...
- }```
+ }
+ ```
 
 From the response JSON we will capture the following data:
 * Venue ID
@@ -61,7 +63,8 @@ From the response JSON we will capture the following data:
 After we have obtained the list of venues we can use the venue ID to obtain more details about the venue.
 ```https://api.foursquare.com/v2/venues/5942993fc666664eab7febf4?client_id=xxx&client_secret=xxx&v=20180604```
 The query returns a JSON with venue details:
-```{'id': '5942993fc666664eab7febf4',
+```
+{'id': '5942993fc666664eab7febf4',
  'name': 'Areperia Colombian Street Food',
  'contact': {'instagram': 'areperiahelsinki',
   'facebook': '1878881332377257',
@@ -145,7 +148,8 @@ The query returns a JSON with venue details:
     'count': 0,
     'items': []}]},
 ...
-}}```
+}}
+```
 
   From the venue details response JSON we will use:
   * Category data
@@ -154,10 +158,11 @@ The query returns a JSON with venue details:
   * Price Category
   * venue tips
 
-DigiTransit APIs
+### DigiTransit APIs
 
 The API is based on GraphQL. Due to the requirement we are mainly interested about the public transportation stops close to the proposed restaurant location. For this purpose we can use the following query:
- ``` {
+ ``` 
+ {
     stopsByRadius(lat:60.199,lon:24.938,radius:500) {
       edges {
         node {
@@ -169,11 +174,13 @@ The API is based on GraphQL. Due to the requirement we are mainly interested abo
         }
       }
     }
-  }```
+  }
+  ```
 
 in which the lat and lon are the coordinates for our locations and radius is the search radius in meters. The query will return a JSON file containing the public transportation stops within the defined radius.
 
-```{
+```
+{
   "data": {
     "stopsByRadius": {
       "edges": [
@@ -198,7 +205,8 @@ in which the lat and lon are the coordinates for our locations and radius is the
         ...
       ]
     }
-  }```
+  }
+  ```
 
 Since we are mainly interested about the availability of the public transportation we will focus on number of stops within the radius. It is also possible to obtain more detailed route information for a particular stop but that is out of scope for this analysis.
 
