@@ -282,6 +282,7 @@ From the data we will collect:
 ## Methodology 
 
 First we need to download the venue data from our data sources. This is handled via the provided API and the results are stored into a Pandas dataframe. The results looks like this:
+
 |  name                                | categories         |     lat |     lng |   price |   review |
 | :------------------------------------|:-------------------|--------:|--------:|--------:|---------:|
 |  Töölön torigrilli                   | grill              | 60.179  | 24.9236 |       1 |       10 |
@@ -336,6 +337,7 @@ Then we would like to know how similar these neighborhoods are with respect to t
 |  Ullanlinna      | pizza place             | finnish restaurant      | restaurant              | italian restaurant      | french restaurant       | russian restaurant      | spanish restaurant      | cafe-terrace            | international           | german                   |
 
 Then lets cluster the neighborhoods into 5 clusters:
+
 |    Cluster Labels | neighborhood    |
 | -----------------:|:----------------|
 |                 2 | Etu-Töölö       |
@@ -361,6 +363,7 @@ Based on clustering we can see that:
 * Cluster 5 seems to be drive by the more upscale restaurants and restaurants with more specific profile.
 
 Next we need to investigate the restaurant types. Top 15 restaurant categories in Helsinki are:
+
 | categories             | count |
 |:-----------------------|------:|
 | restaurant	         |     50|	
@@ -389,6 +392,7 @@ Next let's investigate the how well restaurants are reviewed. In order to do thi
 
 
 Finally the customer requested an area with a functioning public transportation. To estimate this we obtained the neighborhood area from the GeoJSON data, found the center point and used an "overlay circle" on the center point to give a search radius. Then we used the digitransit API to fetch the stops within a given circle. Finally we divided the number of public transportation stops with the neighborhood area. This provided the following estimates:
+
 |  neighborhood    |    stops |
 | :----------------|---------:|
 |  Kamppi          | 38.7163  |
