@@ -386,6 +386,11 @@ Based on the order two key points can be identified:
 1. Restaurant needs a clear concept - there are plenty of generic restaurants in Helsinki
 2. Finnish and Asian cuisine is quite well covered
 
+Also we are interested on what is the price category distribution in different neighborhoods. This can be seen in the following figure:
+
+![Price categories in neighborhoods](/img/price-categories.png)
+
+
 Next let's investigate the how well restaurants are reviewed. In order to do this let's define a pivot table between neighborhood, price category and reviews. The result can be seen in the following graph:
 
 ![Helsinki neighborhoods pivoted on price and reviews](/img/avg-rating-price.png)
@@ -412,11 +417,27 @@ It needs to be noted that these figures are only estimates since the way how the
 
 ## Results 
 
+The key results of the analysis can be summarised as:
+* Majority of the restaurants in the Helsinki are clustered within a few neighborhoods
+* There are plenty of generic restaurants without any clear concept
+* Finnish and asian kitchens are well represented
+* On average the more moderately priced restaurants (price categories 1-3) seem to get good reviews
+* There a differences between the neighborhoods when looking into the availability of public transportation
+* Cheapest category is most common in each of the neighborhoods
+* With the exception of Taka-Töölö region there seems to be a shortage mid-price categories in each of the neighborhoods
+* Most common ethnic cuisines are Finnish, Italian, Japanese and Chinese
 
-section where you discuss the results.
+## Discussion
 
-## Discussion 
-section where you discuss any observations you noted and any recommendations you can make based on the results.
+Based on the data analysis the following recommendations can be identified:
+* Avoid the central neighborhoods (Kamppi, Kluuvi) - There is already an abundance of restaurants and it might be difficult to profile
+* Best price point seems to be the price categories 2 and 3 - There are less restaurants on these categories and they seem to get better reviews
+* From the neighborhoods Punavuori seems to be a good compromise - Not too crowded from the existing restaurants perspective and good public transportation
+* New restaurant needs a strong concept - There a plenty of generic restaurants making it difficult to create a strong brand
+* Avoid Finnish, Italian, Japanese and Chinese restaurant concepts - These are the most common restaurant categories in Helsinki
 
 ## Conclusion 
-section where you conclude the report.
+
+The purpose of the analysis was to analyse the Helsinkin neighborhoods and identify potential area for a new upcoming restaurant. In addition it was requested that the analysis investigates the abundancy of different restaurant concepts. Finally each neighborhood was investigated with respect to availability of public transportation. Each of these analysis was conducted and based on the analysis some recommendations were identified.
+
+As a final remark the restaurant business seems to be quite competitive even in Helsinki that is not a metropol. There are plenty of restaurants spread around the city. In order to succeed on the restaurant business it is extremely important to select correct location and the right restaurant concept. Hopefully this report has given some recommendations that ca be used as guideline for these issues.
